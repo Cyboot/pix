@@ -1,0 +1,33 @@
+package de.timweb.pix.util;
+
+public class Vector2d {
+	public double	x;
+	public double	y;
+
+	public Vector2d() {
+	}
+
+	public Vector2d(double x, double y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public Vector2d copy() {
+		return new Vector2d(x, y);
+	}
+
+	public double distance(Vector2d other) {
+		double dx = other.x - x;
+		double dy = other.y - y;
+
+		return Math.sqrt(dx * dx + dy * dy);
+	}
+
+	public int x() {
+		return (int) x;
+	}
+
+	public int y() {
+		return (int) y;
+	}
+}
