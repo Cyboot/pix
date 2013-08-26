@@ -5,14 +5,12 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.image.BufferStrategy;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Locale;
 
 import de.timweb.pix.game.Game;
 import de.timweb.pix.util.CountdownTimer;
 import de.timweb.pix.util.Graphics2D;
 import de.timweb.pix.util.ImageLoader;
+import de.timweb.pix.util.StringFormatter;
 
 public class GameEngine extends Canvas {
 	public static final int	DELTA_TARGET			= 15;
@@ -30,6 +28,7 @@ public class GameEngine extends Canvas {
 		this.setMinimumSize(dim);
 		this.setMaximumSize(dim);
 
+		addKeyListener(Controls.getInstance());
 		setBackground(Color.magenta);
 	}
 
@@ -103,9 +102,7 @@ public class GameEngine extends Canvas {
 	}
 
 
-	private DecimalFormat	df	= new DecimalFormat("#0.00", DecimalFormatSymbols.getInstance(Locale.US));
-
 	private String getCPUWorkload() {
-		return df.format(cpuWorkload);
+		return StringFormatter.format(cpuWorkload);
 	}
 }

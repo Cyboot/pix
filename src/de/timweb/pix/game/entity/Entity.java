@@ -1,11 +1,16 @@
 package de.timweb.pix.game.entity;
 
+import de.timweb.pix.engine.Controls;
+import de.timweb.pix.game.world.World;
 import de.timweb.pix.util.Graphics2D;
 import de.timweb.pix.util.Vector2d;
 
 public abstract class Entity {
-	protected Vector2d	pos;
-	private boolean		isAlive	= true;
+	protected static Controls	input	= Controls.getInstance();
+	protected static World		world	= World.getInstance();
+
+	protected Vector2d			pos;
+	private boolean				isAlive	= true;
 
 	public Entity() {
 		this(new Vector2d());

@@ -30,4 +30,10 @@ public class Vector2d {
 	public int y() {
 		return (int) y;
 	}
+
+
+	@Override
+	public String toString() {
+		return "(" + StringFormatter.format(x, 4, 2) + " : " + StringFormatter.format(y, 4, 2) + ")";
+	}
 }

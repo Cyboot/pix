@@ -26,7 +26,7 @@ class TileMap {
 			int x = (int) (key >> 32) * World.GRIDSIZE;
 			int y = (int) key * World.GRIDSIZE;
 
-			g.drawImage(tile.getImage(), x, y);
+			g.onWorld().drawImage(tile.getImage(), x, y);
 		}
 	}
 
