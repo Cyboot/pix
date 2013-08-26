@@ -9,9 +9,11 @@ import de.timweb.pix.engine.GameEngine;
 
 public class ImageLoader {
 	public static BufferedImage	grass;
+	public static BufferedImage	water;
 
 	public static void init() {
 		grass = loadImage("grass.png");
+		water = loadImage("water.png");
 	}
 
 	private static BufferedImage loadImage(String img) {

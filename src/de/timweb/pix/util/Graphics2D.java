@@ -12,12 +12,14 @@ public class Graphics2D {
 	public Graphics					g;
 
 	public void drawImage(Image img, int x, int y) {
-		g.drawImage(img, x, y, x + img.getWidth(null) * SCALE, y + img.getHeight(null) * SCALE, 0, 0,
-				img.getWidth(null), img.getHeight(null), null);
+		if (img != null)
+			g.drawImage(img, x, y, x + img.getWidth(null) * SCALE, y + img.getHeight(null) * SCALE, 0, 0,
+					img.getWidth(null), img.getHeight(null), null);
 	}
 
 	public void drawImage(Image img, Vector2d position) {
-		drawImage(img, position.x(), position.y());
+		if (img != null)
+			drawImage(img, position.x(), position.y());
 	}
 
 	public void fillRect(int x, int y, int width, int height, Color color) {

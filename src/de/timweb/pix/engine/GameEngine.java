@@ -21,7 +21,7 @@ public class GameEngine extends Canvas {
 	private String			cpuWorkloadText			= "";
 	private CountdownTimer	timerCPUWorkloadText	= new CountdownTimer(1000);
 
-	private Game			game					= Game.getInstance();
+	private Game			game;
 	private Graphics2D		graphics2d				= Graphics2D.getInstance();
 
 	public GameEngine() {
@@ -35,6 +35,8 @@ public class GameEngine extends Canvas {
 
 	public void start() {
 		ImageLoader.init();
+		Game.init();
+		game = Game.getInstance();
 
 		final int DELTA_TARGET_NANOS = DELTA_TARGET * 1000 * 1000;
 
